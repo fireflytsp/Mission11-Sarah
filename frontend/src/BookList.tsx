@@ -7,6 +7,7 @@ function BookList() {
   const [pageNum, setPageNum] = useState<number>(1);
   const [totalItems, setTotalItems] = useState<number>(0);
   const [totalPages, setTotalPages] = useState<number>(0);
+  const [sortOrder, setSortOrder] = useState<'asc' | 'desc'>('asc');
 
   useEffect(() => {
     const fetchBooks = async () => {
@@ -24,11 +25,24 @@ function BookList() {
     fetchBooks();
   }, [pageSize, pageNum, totalItems]);
 
+  const sortedBooks = [...books].sort((a, b) => {
+    if (sortOrder === 'asc') {
+      return a.title.localeCompare(b.title);
+    } else {
+      return b.title.localeCompare(a.title);
+    }
+  });
+
   return (
     <>
+    <h1>Books</h1>
+      <button onClick={() => setSortOrder(sortOrder === 'asc' ? 'desc' : 'asc')}>
+        Sort by Project Name ({sortOrder === 'asc' ? 'A → Z' : 'Z → A'})
+      </button>
+      
       <h1>Books</h1>
       <br />
-      {books.map((b) => (
+      {sortedBooks.map((b) => (
         <div id="bookCard" className="card" key={b.bookId}>
           <h3 className="card-title">{b.title}</h3>
           <div className="card-body">

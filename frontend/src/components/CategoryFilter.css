@@ -1,0 +1,32 @@
+.category-filter {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-family: Arial, sans-serif;
+    margin-left: -5px;
+}
+
+.category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.category-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.category-checkbox {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+}
+
+.my-carousel-img {
+    width: 50%; 
+    height: auto; 
+    max-width: 200px; 
+    align-items: center;
+}

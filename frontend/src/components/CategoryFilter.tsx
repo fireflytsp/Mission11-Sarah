@@ -13,7 +13,7 @@ useEffect(() => {
     const fetchCategories = async () => {
         try{
             const response = await fetch(
-                'https://mission13builtinbackend.azurewebsites.net/api/Book/BookCategory'
+                'https://mission13builtinbackend.azurewebsites.net/api/Book/books'
             );
             const data = await response.json();
             console.log('Fetched categories:', data);

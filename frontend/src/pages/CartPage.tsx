@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { CartItem } from '../types/CartItem';
+import WelcomeBand from '../components/WelcomeBand';
 
 function CartPage() {
     const navigate = useNavigate();
@@ -11,6 +12,7 @@ function CartPage() {
 
     return (
         <div>
+            <WelcomeBand />
             <h2>Your cart</h2>
             <div>
                 {cart.length === 0 ? (

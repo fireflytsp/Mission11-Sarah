@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { CartItem } from "../types/CartItem";
 import { useParams } from "react-router-dom";
+import WelcomeBand from "../components/WelcomeBand";
 
 function ShoppingCartPage() {
     const navigate = useNavigate();
@@ -29,6 +30,7 @@ function ShoppingCartPage() {
 
     return (
         <div className="container mt-4">
+            <WelcomeBand />
             <h2>Checkout: {title}</h2>
             <h4>Price: ${price}</h4>
 

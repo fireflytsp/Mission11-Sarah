@@ -18,7 +18,8 @@ export const fetchBooks = async (
       .map((cat) => `bookCategories=${encodeURIComponent(cat)}`)
       .join(`&`);
       const response = await fetch(
-        `${API_URL}/Book?pageSize=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`      );
+        `${API_URL}/Book?pageSize=${pageSize}&pageNum=${pageNum}${selectedCategories.length ? `&${categoryParams}` : ''}`
+      );
 
         if (!response.ok) {
             throw new Error("Failed to fetch books");
